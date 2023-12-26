@@ -1,0 +1,40 @@
+@startuml
+class com.example.num0.HelloApplication {
++ void start(Stage)
++ {static} void main(String[])
+}
+class com.example.num0.HelloController {
++ TextField txt1
++ AnchorPane ancorPane1
++ Button onClick
++ Label labelStatus
++ AnchorPane ancor
+~ Director director
+~ Indicator indicator
++ void calculateBMI()
++ void onClick()
+}
+class com.example.num0.Indicator {
+- Pane pane2
++ void add(Pane)
++ void show(AnchorPane)
+}
+class com.example.num0.Director {
+~ BuildRect buildRect
++ Indicator Constr(int,int,Color)
+}
+class com.example.num0.BuildRect {
+~ Pane pane
+~ Indicator indicator
++ void createIndicator(int,int,Color)
++ Indicator build()
+}
+interface com.example.num0.Builder {
++ void createIndicator(int,int,Color)
++ Indicator build()
+}
+
+
+javafx.application.Application <|-- com.example.num0.HelloApplication
+com.example.num0.Builder <|.. com.example.num0.BuildRect
+@enduml

@@ -1,0 +1,24 @@
+@startuml
+interface com.example.num0.model.Builder {
++ void createIndicator(int,int,Color)
++ Indicator build()
+}
+class com.example.num0.model.BuildRect {
+~ Pane pane
+~ Indicator indicator
++ void createIndicator(int,int,Color)
++ Indicator build()
+}
+class com.example.num0.model.Director {
+~ BuildRect buildRect
++ Indicator Constr(int,int,Color)
+}
+class com.example.num0.model.Indicator {
+- Pane pane2
++ void add(Pane)
++ void show(AnchorPane)
+}
+
+
+com.example.num0.model.Builder <|.. com.example.num0.model.BuildRect
+@enduml
